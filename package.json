@@ -8,11 +8,17 @@
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-infinite-scroll-component": "^6.1.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
+<<<<<<< HEAD
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+=======
+>>>>>>> c78d2b5306003c15ccc519d85dac8bbfd38b70b2
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
