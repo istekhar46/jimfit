@@ -7,7 +7,8 @@ import ExerciseDetail from './pages/ExerciseDetail';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import News from './components/News'
+import News from './components/News';
+import About from './components/About';
 import BmiCalculator from './components/BMICalculator';
 
 import ExerciseGenerator from './components/ExerciseGenerator';
@@ -32,7 +33,8 @@ const App = () => {
           <Route path="/exercise/:id" element={<ExerciseDetail />} />
           <Route path="/news/" element={<News setProgress={setProg} />} />
           <Route path="/bmi/" element={<BmiCalculator />} />
-      <Route path="/eg/" element={<ExerciseList />} />
+          <Route path="/eg/" element={<ExerciseList />} />
+          <Route path="/about" element={<About setProgress={setProg}/>} />
         </Routes>
         <LoadingBar
           color='#f11946'
