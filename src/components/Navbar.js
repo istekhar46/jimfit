@@ -22,6 +22,13 @@ export default function Navbar() {
               <li className="nav-item">
                 <a className="nav-link" href="/about">About</a>
               </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/bmi">BMI</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/eg">Exercises</a>
+              </li>
+
             </ul>
           </div>
         </div>

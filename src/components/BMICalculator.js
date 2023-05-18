@@ -1,59 +1,68 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const BmiCalculator = () => {
   const [weight, setWeight] = useState('');
   const [height, setHeight] = useState('');
-  const [bmi, setBmi] = useState('');
-  const [category, setCategory] = useState('');
+  const [bmi, setBmi] = useState(null);
+  const [bodyFatPercentage, setBodyFatPercentage] = useState(null);
 
-  const calculateBmi = () => {
-    const weightInKg = parseFloat(weight);
-    const heightInMeters = parseFloat(height) / 100; // Convert height to meters
+  useEffect(() => {
+    if (weight && height) {
+      const heightInMeters = height / 100; // Convert height from cm to meters
+      const bmiValue = weight / (heightInMeters * heightInMeters);
+      const bodyFatValue = calculateBodyFatPercentage(bmiValue); // Custom function for body fat calculation
 
-    if (weightInKg && heightInMeters) {
-      const bmiValue = weightInKg / (heightInMeters * heightInMeters);
       setBmi(bmiValue.toFixed(2));
-
-      if (bmiValue < 18.5) {
-        setCategory('Underweight');
-      } else if (bmiValue >= 18.5 && bmiValue < 25) {
-        setCategory('Normal Weight');
-      } else if (bmiValue >= 25 && bmiValue < 30) {
-        setCategory('Overweight');
-      } else {
-        setCategory('Obese');
-      }
+      setBodyFatPercentage(bodyFatValue.toFixed(2));
     } else {
-      setBmi('');
-      setCategory('');
+      setBmi(null);
+      setBodyFatPercentage(null);
     }
+  }, [weight, height]);
+
+  const calculateBodyFatPercentage = (bmi) => {
+    // Perform body fat calculation based on BMI value
+    // Replace with your own calculation logic
+    return (bmi * 2).toFixed(2);
+  };
+
+  const getBmiColorClass = () => {
+    if (bmi === null) return ''; // No color class if BMI is not calculated yet
+    if (bmi < 18.5) return 'underweight';
+    if (bmi >= 18.5 && bmi < 25) return 'normal-weight';
+    if (bmi >= 25 && bmi < 30) return 'overweight';
+    return 'obese';
   };
 
   return (
     <div>
       <h2>BMI Calculator</h2>
       <div>
-        <label>Weight (in kg):</label>
+        <label htmlFor="weight">Weight (kg):</label>
         <input
           type="number"
+          id="weight"
           value={weight}
           onChange={(e) => setWeight(e.target.value)}
         />
       </div>
       <div>
-        <label>Height (in cm):</label>
+        <label htmlFor="height">Height (cm):</label>
         <input
           type="number"
+          id="height"
           value={height}
           onChange={(e) => setHeight(e.target.value)}
         />
       </div>
-      <button onClick={calculateBmi}>Calculate BMI</button>
-      {bmi && category && (
+
+      {bmi !== null && (
         <div>
-          <h3>Result:</h3>
           <p>BMI: {bmi}</p>
-          <p>Category: {category}</p>
+          <p>Body Fat Percentage: {bodyFatPercentage}%</p>
+          <div className={`bmi-color ${getBmiColorClass()}`}>
+            Classification: {getBmiColorClass()}
+          </div>
         </div>
       )}
     </div>

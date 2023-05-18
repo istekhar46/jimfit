@@ -8,6 +8,11 @@ import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import News from './components/News'
+import BmiCalculator from './components/BMICalculator';
+
+import ExerciseGenerator from './components/ExerciseGenerator';
+import ExerciseList from './components/ExerciseGenerator';
+
 import LoadingBar from 'react-top-loading-bar';
 import { useState } from 'react'
 
@@ -26,6 +31,8 @@ const App = () => {
           <Route path="/" element={<Home setProgress={setProg} />} />
           <Route path="/exercise/:id" element={<ExerciseDetail />} />
           <Route path="/news/" element={<News setProgress={setProg} />} />
+          <Route path="/bmi/" element={<BmiCalculator />} />
+      <Route path="/eg/" element={<ExerciseList />} />
         </Routes>
         <LoadingBar
           color='#f11946'
@@ -37,5 +44,8 @@ const App = () => {
   )
 };
 
-
 export default App;
+
+
+
+
