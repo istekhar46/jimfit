@@ -1,3 +1,4 @@
+// import { wrap } from 'module';
 import React, { useState } from 'react';
 
 const ExerciseList = () => {
@@ -65,29 +66,50 @@ const ExerciseList = () => {
       <h2>Exercise List</h2>
 
       {showForm && (
+        <div className="form-wrap">
         <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="name">Name:</label>
-            <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
+          <div className="row">
+            <div className="col-md-6">
+              <div className="form-group">
+              <label htmlFor="name" className='form-label'>Name:</label>
+            <input type="text" id="name" className='form-control' value={name} onChange={(e) => setName(e.target.value)} />
+              </div>
+            </div>
+
+
+          <div className='col-md-6'>
+            <div className="form-group">
+            <label htmlFor="type" className='form-label'>Type:</label>
+            <input type="text" id="type" className='form-control' value={type} onChange={(e) => setType(e.target.value)} />
+            </div>
+            </div>
           </div>
-          <div>
-            <label htmlFor="type">Type:</label>
-            <input type="text" id="type" value={type} onChange={(e) => setType(e.target.value)} />
+          <div className="row">
+            <div className="col-md-6">
+              <div className="form-group">
+              <label htmlFor="muscle" className='form-label'>Muscle:</label>
+            <input type="text" id="muscle" className='form-control' value={muscle} onChange={(e) => setMuscle(e.target.value)} />
           </div>
-          <div>
-            <label htmlFor="muscle">Muscle:</label>
-            <input type="text" id="muscle" value={muscle} onChange={(e) => setMuscle(e.target.value)} />
           </div>
-          <div>
-            <label htmlFor="equipment">Equipment:</label>
-            <input type="text" id="equipment" value={equipment} onChange={(e) => setEquipment(e.target.value)} />
+          <div className='col-md-6'>
+            <div className="form-group">
+              <label htmlFor="equipment" className='form-label'>Equipment:</label>
+            <input type="text" id="equipment" className='form-control' value={equipment} onChange={(e) => setEquipment(e.target.value)} />
           </div>
-          <div>
-            <label htmlFor="difficulty">Difficulty:</label>
-            <input type="text" id="difficulty" value={difficulty} onChange={(e) => setDifficulty(e.target.value)} />
           </div>
-          <button type="submit">Submit</button>
+          </div>
+          <div className='mb-3'>
+            <label htmlFor="difficulty" className='form-label'>Difficulty:</label>
+            <select name="difficulty" id="dropdown" className='form-control' value={difficulty} onChange={(e) => setDifficulty(e.target.value)}>
+              <option value="">Select</option>
+              <option value="beginner">Beginner</option>
+            </select>
+          </div>
+          <div className="text-center">
+          <button type="submit" className="btn btn-dark">Submit</button>
+          </div>
         </form>
+        </div>
       )}
 
       {!showForm && (
@@ -115,7 +137,7 @@ const ExerciseList = () => {
             </div>
           ))
         ) : (
-          <p>No exercises found.</p>
+          <p></p>
         )}
       </div>
     </div>
