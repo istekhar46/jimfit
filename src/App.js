@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Box } from '@mui/material';
 
 import './App.css';
+import './index.css';
 import ExerciseDetail from './pages/ExerciseDetail';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
@@ -10,6 +11,7 @@ import Footer from './components/Footer';
 import News from './components/News';
 import About from './components/About';
 import BodyFatCalculator from './components/BFICalculator';
+import BMICalculator from "./components/BMICalculator";
 
 import ExerciseList from './components/ExerciseGenerator';
 
@@ -32,6 +34,7 @@ const App = () => {
           <Route path="/exercise/:id" element={<ExerciseDetail />} />
           <Route path="/news/" element={<News setProgress={setProg} />} />
           <Route path="/bfc/" element={<BodyFatCalculator />} />
+          <Route path="/bmi" element={<BMICalculator />} />
           <Route path="/eg/" element={<ExerciseList />} />
           <Route path="/about" element={<About setProgress={setProg}/>} />
         </Routes>

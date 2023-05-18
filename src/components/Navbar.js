@@ -23,6 +23,9 @@ export default function Navbar() {
                 <a className="nav-link mx-3" href="/bfc">BFC</a>
               </li>
               <li className="nav-item">
+                <a className="nav-link mx-3" href="/bmi">BMI</a>
+              </li>
+              <li className="nav-item">
                 <a className="nav-link mx-3" href="/eg">Exercises</a>
               </li>
               <li className="nav-item">

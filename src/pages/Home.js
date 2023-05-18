@@ -4,13 +4,19 @@ import { Box } from '@mui/material';
 import Exercises from '../components/Exercises';
 import SearchExercises from '../components/SearchExercises';
 import HeroBanner from '../components/HeroBanner';
+import { useEffect } from 'react';
 
 const Home = (props) => {
-  props.setProgress(0)
   const [exercises, setExercises] = useState([]);
-  props.setProgress(50)
   const [bodyPart, setBodyPart] = useState('all');
-  props.setProgress(100)
+
+  useEffect(() => {
+    props.setProgress(100)
+
+
+
+  }, [])
+
 
 
   return (
@@ -20,6 +26,7 @@ const Home = (props) => {
       <Exercises setExercises={setExercises} exercises={exercises} bodyPart={bodyPart} />
     </Box>
   );
+
 };
 
 export default Home;
