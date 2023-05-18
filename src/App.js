@@ -9,24 +9,43 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import News from './components/News'
 import BmiCalculator from './components/BMICalculator';
+
 import ExerciseGenerator from './components/ExerciseGenerator';
 import ExerciseList from './components/ExerciseGenerator';
 
-const App = () => (
-  <Box width="400px" sx={{ width: { xl: '1488px' } }} m="auto">
-    <Navbar />
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/exercise/:id" element={<ExerciseDetail />} />
-      <Route path="/news/" element={<News />} />
-      <Route path="/bmi/" element={<BmiCalculator />} />
+import LoadingBar from 'react-top-loading-bar';
+import { useState } from 'react'
+
+
+
+const App = () => {
+  const [progress, setProgress] = useState(0)
+  const setProg = (prog) => {
+    setProgress(prog);
+  }
+  return (
+    <>
+      <Box width="400px" sx={{ width: { xl: '1488px' } }} m="auto">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home setProgress={setProg} />} />
+          <Route path="/exercise/:id" element={<ExerciseDetail />} />
+          <Route path="/news/" element={<News setProgress={setProg} />} />
+          <Route path="/bmi/" element={<BmiCalculator />} />
       <Route path="/eg/" element={<ExerciseList />} />
-
-    </Routes>
-
-    <Footer />
-  </Box>
-);
-
+        </Routes>
+        <LoadingBar
+          color='#f11946'
+          progress={progress}
+        />
+        <Footer />
+      </Box>
+    </>
+  )
+};
 
 export default App;
+
+
+
+

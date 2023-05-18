@@ -4,7 +4,7 @@ import Logo from '../gifs/Logo.png';
 export default function Navbar() {
   return (
     <div className="">
-      <nav className=" navbar navbar-expand-lg navbar-light bg-light" style={{ zIndex: '1' }}>
+      <nav className=" navbar fixed-top navbar-expand-lg navbar-light bg-light" style={{ zIndex: '1',opacity:'0.95' }}>
         <div className="container-fluid">
           <a className="navbar-brand" href="/" ><img src={Logo} alt="" style={{height:'45px'}} /></a>
           <a className="navbar-brand" href="/">Gym-Fit</a>
@@ -30,7 +30,6 @@ export default function Navbar() {
               </li>
 
             </ul>
-
           </div>
         </div>
       </nav>
