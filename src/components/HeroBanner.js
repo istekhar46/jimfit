@@ -1,14 +1,14 @@
 import React from 'react';
 import { Box, Stack, Typography } from '@mui/material';
 
-import HeroBannerImage from '../assets/images/banner.png';
+import HeroBannerImage from '../gifs/never_give_up.png';
 
 const HeroBanner = () => (
-  <Box sx={{ mt: { lg: '212px', xs: '70px' }, ml: { sm: '50px' } }} position="relative" p="15px" style={{marginTop:'160px'}} >
-    <Typography color="#FF2625" fontWeight="600" fontSize="26px">Fitness Club</Typography>
-    <Typography fontWeight={700} sx={{ fontSize: { lg: '44px', xs: '40px' } }} mb="23px" mt="30px">
-      Sweat, Smile <br />
-      And Repeat
+  <Box sx={{ mt: { lg: '212px', xs: '70px' }, ml: { sm: '50px' } }} position="relative" p="15px" style={{ marginTop: '160px' }} >
+    <Typography color="#FF2625" fontWeight="600" fontSize="36px">JIM FIT</Typography>
+    <Typography fontWeight={700} sx={{ fontSize: { lg: '38px', xs: '34px' } }} mb="23px" mt="30px">
+      Empower your  <br />
+      Fitness
     </Typography>
     <Typography fontSize="22px" fontFamily="Alegreya" lineHeight="35px">
       Check out the most effective exercises personalized to you
@@ -19,7 +19,7 @@ const HeroBanner = () => (
     <Typography fontWeight={600} color="#FF2625" sx={{ opacity: '0.1', display: { lg: 'block', xs: 'none' }, fontSize: '200px' }}>
       Exercise
     </Typography>
-    {/* <img src={HeroBannerImage} alt="hero-banner" className="hero-banner-img" style={{marginTop:'-162px'}} /> */}
+    <img src={HeroBannerImage} alt="hero-banner" className="hero-banner-img" style={{marginTop:'-92px',height:'35rem'}} />
   </Box>
 );
 
