@@ -1,16 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu&family=Varela+Round&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu&family=Varela+Round&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+html {
+  overflow-x: hidden;
+}
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: Ubuntu, Helvetica, sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
   /* font-family: 'Josefin Sans'; */
-  background-color: #FFFAFB;
+  /* background-color: #FFFAFB; */
+  background-color: hsla(0, 0%, 95.3%, 0.75);
 }
 
 * {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
-
 }
 
 ::-webkit-scrollbar {
@@ -26,7 +30,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #FF2625;
+  color: #ff2625;
   font-size: 25px;
   border-radius: 4px;
   position: absolute;
@@ -63,14 +67,13 @@ body {
   width: 700px;
   height: 900px;
   margin-top: -330px;
-
 }
 
 .exercise-card {
   width: 400px;
   height: 445px;
   background: #fff;
-  border-top: 4px solid #FF2625;
+  border-top: 4px solid #ff2625;
   border-bottom-left-radius: 20px;
   text-decoration: none;
   display: flex;
@@ -96,8 +99,8 @@ body {
 }
 
 .search-btn:hover {
-  color: #FF2625 !important;
-  border: 1px solid #FF2625 !important;
+  color: #ff2625 !important;
+  border: 1px solid #ff2625 !important;
 }
 
 .exercise-video {
@@ -108,13 +111,21 @@ body {
   height: 381px;
   text-decoration: none;
 }
-
-@media screen and (max-width:1200px) {
+nav {
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  background-color: hsla(0, 0%, 95.3%, 0.75);
+  box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.05);
+}
+.navbar-nav {
+  margin-left: auto;
+  color: blue;
+}
+@media screen and (max-width: 1200px) {
   .detail-image {
     width: 300px;
     height: 300px;
   }
-
 
   .react-horizontal-scrolling-menu--scroll-container {
     width: 500px;
@@ -137,10 +148,9 @@ body {
     width: 320px;
     height: 300px;
   }
-
 }
 
-@media screen and (max-width:400px) {
+@media screen and (max-width: 400px) {
   .exercise-card {
     width: 280px;
   }
