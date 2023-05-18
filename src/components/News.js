@@ -21,17 +21,17 @@ const News = (props) => {
 
 
     const updateNews = async () => {
-        //props.setProgress(0)
+        props.setProgress(0)
         const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=health&apiKey=45bd1e57d7c34c7a8a0003225896b312&pagesize=${props.pagesize}&page=${page}`;
         setloading(true)
         let data = await fetch(url);
-        //props.setProgress(30)
+        props.setProgress(30)
         let parsedData = await data.json();
-        //props.setProgress(70)
+        props.setProgress(70)
         setarcticles(parsedData.articles)
         settotalResults(parsedData.totalResults)
         setloading(false)
-        //props.setProgress(100)
+        props.setProgress(100)
     }
 
     useEffect(() => {
@@ -40,18 +40,18 @@ const News = (props) => {
 
 
     const fetchMoreData = async () => {
-        //props.setProgress(0)
+        props.setProgress(0)
         const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=health&apiKey=45bd1e57d7c34c7a8a0003225896b312&pagesize=${props.pagesize}&page=${page + 1}`;
         setloading(true)
         let data = await fetch(url);
-        //props.setProgress(30)
+        props.setProgress(30)
         let parsedData = await data.json();
-        //props.setProgress(70)
+        props.setProgress(70)
         setarcticles(articles.concat(parsedData.articles))
         settotalResults(parsedData.totalResults)
         setpage(page + 1)
         setloading(false)
-        //props.setProgress(100)
+        props.setProgress(100)
     }
 
     return (
