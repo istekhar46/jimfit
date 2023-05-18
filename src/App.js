@@ -8,6 +8,9 @@ import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import News from './components/News'
+import BmiCalculator from './components/BMICalculator';
+import ExerciseGenerator from './components/ExerciseGenerator';
+import ExerciseList from './components/ExerciseGenerator';
 
 const App = () => (
   <Box width="400px" sx={{ width: { xl: '1488px' } }} m="auto">
@@ -16,8 +19,11 @@ const App = () => (
       <Route path="/" element={<Home />} />
       <Route path="/exercise/:id" element={<ExerciseDetail />} />
       <Route path="/news/" element={<News />} />
+      <Route path="/bmi/" element={<BmiCalculator />} />
+      <Route path="/eg/" element={<ExerciseList />} />
+
     </Routes>
-    
+
     <Footer />
   </Box>
 );
