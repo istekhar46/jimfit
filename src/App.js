@@ -3,15 +3,16 @@ import { Route, Routes } from 'react-router-dom';
 import { Box } from '@mui/material';
 
 import './App.css';
+import './index.css';
 import ExerciseDetail from './pages/ExerciseDetail';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import News from './components/News';
 import About from './components/About';
-import BmiCalculator from './components/BMICalculator';
+import BodyFatCalculator from './components/BFICalculator';
+import BMICalculator from "./components/BMICalculator";
 
-import ExerciseGenerator from './components/ExerciseGenerator';
 import ExerciseList from './components/ExerciseGenerator';
 
 import LoadingBar from 'react-top-loading-bar';
@@ -32,7 +33,8 @@ const App = () => {
           <Route path="/" element={<Home setProgress={setProg} />} />
           <Route path="/exercise/:id" element={<ExerciseDetail />} />
           <Route path="/news/" element={<News setProgress={setProg} />} />
-          <Route path="/bmi/" element={<BmiCalculator />} />
+          <Route path="/bfc/" element={<BodyFatCalculator />} />
+          <Route path="/bmi" element={<BMICalculator />} />
           <Route path="/eg/" element={<ExerciseList />} />
           <Route path="/about" element={<About setProgress={setProg}/>} />
         </Routes>

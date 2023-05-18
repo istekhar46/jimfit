@@ -56,7 +56,7 @@ const News = (props) => {
 
     return (
         <>
-
+        
             <h1 className='text-center'style={{marginTop:'110px'}} >Today's Top {capitalizeFirstLetter("Health")} Headlines </h1>
             {loading && <Spinnig />}
             <InfiniteScroll
