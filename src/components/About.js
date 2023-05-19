@@ -3,7 +3,7 @@ import React from 'react'
 export default function About(props) {
       props.setProgress(100)
     return (
-        <div className="container" style={{ marginTop: '110px' }}>
+        <div className="container" style={{ marginTop: '88px' }}>
             <p><strong> Fitness Hub: Your Source for Exercises, BMI Tracking, and News
 
                 Welcome to Fitness Hub, your ultimate destination for all things fitness-related. Whether you're looking to get in shape, track your BMI, or stay updated on the latest news in the fitness world, we've got you covered.</strong></p>
