@@ -64,7 +64,7 @@ function BMICalculator() {
             <input value={weight} onChange={(e) => setWeight(e.target.value)} placeholder='Enter your Weight' />
           </div>
           <div>
-            <label>Height (mtr)</label>
+            <label>Height (m)</label>
             <input value={height} onChange={(event) => setHeight(event.target.value)} placeholder='Enter your Height' />
           </div>
           <div>
