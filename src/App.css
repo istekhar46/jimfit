@@ -2,6 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
 html {
   overflow-x: hidden;
+  background-color: hsla(0, 0%, 95.3%, 0.75);
+
 }
 body {
   font-family: Ubuntu, Helvetica, sans-serif;
@@ -15,6 +17,8 @@ body {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
+  background-color: hsla(0, 0%, 95.3%, 0.75);
+
 }
 
 ::-webkit-scrollbar {

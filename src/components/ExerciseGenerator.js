@@ -89,12 +89,15 @@ const typeOptions = [
     <div style={{ marginTop: "110px" }}>
       <h2 className="text-center" style={{color:'#ff2625'}}>Exercise List</h2>
 
+
       {showForm && (
         <div className="form-wrap p-2">
           <form onSubmit={handleSubmit}>
             <div className="container">
+          <h2 className="text-center mb-4">Exercise List</h2>
+
               <div className="row">
-                <div className="col-md-6">
+                <div className="col-md-6 ">
                   <div className="form-group">
                     <label htmlFor="name" className="form-label">
                       Name:
@@ -102,7 +105,7 @@ const typeOptions = [
                     <input
                       type="text"
                       id="name"
-                      className="form-control"
+                      className="form-control m-0"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                     />
@@ -130,7 +133,7 @@ const typeOptions = [
                   </div>
                 </div>
               </div>
-              <div className="row">
+              <div className="row mt-4">
                 <div className="col-md-6">
                   <div className="form-group">
                   <label htmlFor="muscle" className="form-label">

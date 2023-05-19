@@ -4,9 +4,9 @@ import Logo from '../assets/images/Logo-1.jpg';
 export default function Navbar() {
   return (
     <div className="">
-      <nav className="navbar fixed-top navbar-expand-lg navbar-light font-dark" style={{ zIndex: '1', opacity: '0.95', fontSize: '1.3rem', boxShadow: '0pc 0.5px 0.5px' }}>
+      <nav className="navbar fixed-top navbar-expand-lg navbar-light font-dark" style={{ zIndex: '1', opacity: '0.95', fontSize: '1rem', boxShadow: '0pc 0.5px 0.5px' }}>
         <div className="container-fluid">
-          <a className="navbar-brand" href="/" ><img src={Logo} alt="" style={{ height: '40px', borderRadius: '50%' }} /></a>
+          <a className="navbar-brand" href="/" ><img src={Logo} alt="" style={{ height: '35px', borderRadius: '50%' }} /></a>
           {/* <a className="navbar-brand" href="/">Gym-Fit</a> */}
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon" />
