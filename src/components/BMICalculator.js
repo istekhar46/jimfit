@@ -5,8 +5,8 @@ import '../index.css'
 function BMICalculator() {
 
   // state
-  const [weight, setWeight] = useState(0)
-  const [height, setHeight] = useState(0)
+  const [weight, setWeight] = useState('')
+  const [height, setHeight] = useState('')
   const [bmi, setBmi] = useState('')
   const [message, setMessage] = useState('')
 
@@ -19,7 +19,7 @@ function BMICalculator() {
     if (weight === 0 || height === 0) {
       alert('Please enter a valid weight and height')
     } else {
-      let bmi = (weight / (height * height) * 703)
+      let bmi = (weight / (height * height))
       setBmi(bmi.toFixed(1))
 
       // Logic for message
@@ -60,12 +60,12 @@ function BMICalculator() {
         <h2 className='center'>BMI Calculator</h2>
         <form onSubmit={calcBmi}>
           <div>
-            <label>Weight (lbs)</label>
-            <input value={weight} onChange={(e) => setWeight(e.target.value)} />
+            <label>Weight (kg)</label>
+            <input value={weight} onChange={(e) => setWeight(e.target.value)} placeholder='Enter your Weight' />
           </div>
           <div>
-            <label>Height (in)</label>
-            <input value={height} onChange={(event) => setHeight(event.target.value)} />
+            <label>Height (mtr)</label>
+            <input value={height} onChange={(event) => setHeight(event.target.value)} placeholder='Enter your Height' />
           </div>
           <div>
             <button className='btn' type='submit'>Submit</button>
