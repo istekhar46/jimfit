@@ -87,14 +87,13 @@ const typeOptions = [
     ];
   return (
     <div style={{ marginTop: "110px" }}>
-      <h2 className="text-center" style={{color:'#ff2625'}}>Exercise List</h2>
 
 
       {showForm && (
         <div className="form-wrap p-2">
           <form onSubmit={handleSubmit}>
             <div className="container">
-          <h2 className="text-center mb-4">Exercise List</h2>
+            <h2 className="text-center mb-4" style={{color:'#ff2625'}}>Exercise List</h2>
 
               <div className="row">
                 <div className="col-md-6 ">
