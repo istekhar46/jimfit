@@ -23,7 +23,7 @@ const BodyFatCalculator = () => {
   return (
     <div className="container" style={{ marginTop: "88px",maxWidth:'30%' }}>
       <div >
-        <h2 className="text-center mb-4" style={{color:'#ff2625'}}>Body Fat Calculator</h2>
+        <h2 className="text-center mb-4" style={{color:'#ff2625',padding:'24px 0'}}>Body Fat Calculator</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label htmlFor="weight" className="form-label">Weight (in kg):</label>
