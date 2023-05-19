@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../index.css'
 
 const BodyFatCalculator = () => {
   const [weight, setWeight] = useState('');
@@ -20,54 +21,56 @@ const BodyFatCalculator = () => {
   };
 
   return (
-    <div className="container" style={{ marginTop: "110px" }}>
-      <h2 className="text-center mb-4">Body Fat Calculator</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-3">
-          <label htmlFor="weight" className="form-label">Weight (in kg):</label>
-          <input
-            type="number"
-            id="weight"
-            className="form-control"
-            value={weight}
-            onChange={(e) => setWeight(e.target.value)}
-            required
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="waist" className="form-label">Waist circumference (in cm):</label>
-          <input
-            type="number"
-            id="waist"
-            className="form-control"
-            value={waist}
-            onChange={(e) => setWaist(e.target.value)}
-            required
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="neck" className="form-label">Neck circumference (in cm):</label>
-          <input
-            type="number"
-            id="neck"
-            className="form-control"
-            value={neck}
-            onChange={(e) => setNeck(e.target.value)}
-            required
-          />
-        </div>
-        <div className="text-center d-grid gap-2 col-6 mx-auto">
-                <button type="submit" className="btn btn-dark mt-5">
-                  Calculate
-                </button>
-                </div>
-              </form>
-      {bodyFat !== '' && (
-        <div className="mt-4">
-          <h3>Results:</h3>
-          <p>Body Fat Percentage: {bodyFat}%</p>
-        </div>
-      )}
+    <div className="container" style={{ marginTop: "88px",maxWidth:'30%' }}>
+      <div >
+        <h2 className="text-center mb-4" style={{color:'#ff2625'}}>Body Fat Calculator</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <label htmlFor="weight" className="form-label">Weight (in kg):</label>
+            <input
+              type="number"
+              id="weight"
+              className="form-control"
+              value={weight}
+              onChange={(e) => setWeight(e.target.value)}
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="waist" className="form-label">Waist circumference (in cm):</label>
+            <input
+              type="number"
+              id="waist"
+              className="form-control"
+              value={waist}
+              onChange={(e) => setWaist(e.target.value)}
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="neck" className="form-label">Neck circumference (in cm):</label>
+            <input
+              type="number"
+              id="neck"
+              className="form-control"
+              value={neck}
+              onChange={(e) => setNeck(e.target.value)}
+              required
+            />
+          </div>
+          <div className="text-center d-grid gap-2 col-6 mx-auto">
+            <button type="submit" className="btn btn-dark mt-5">
+              Calculate
+            </button>
+          </div>
+        </form>
+        {bodyFat !== '' && (
+          <div className="mt-4">
+            <h3>Results:</h3>
+            <p>Body Fat Percentage: {bodyFat}%</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
