@@ -14,13 +14,6 @@ export const youtubeOptions = {
   },
 };
 
-export const exercisegeneratoroptions = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'cc8ac817bdmshcc70b99833fab42p1d40d1jsn94f9a8627f39',
-		'X-RapidAPI-Host': 'https://api.api-ninjas.com'
-	}
-};
 
 export const fetchData = async (url, options) => {
   const res = await fetch(url, options);

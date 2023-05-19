@@ -58,6 +58,33 @@ const ExerciseList = () => {
     return <p>Error: {error}</p>;
   }
 
+const typeOptions = [
+      'cardio',
+'olympic_weightlifting',
+'plyometrics',
+'powerlifting',
+'strength',
+'stretching',
+'strongman'
+];
+    const muscleOptions = [
+      'abdominals',
+      'abductors',
+      'adductors',
+      'biceps',
+      'calves',
+      'chest',
+      'forearms',
+      'glutes',
+      'hamstrings',
+      'lats',
+      'lower_back',
+      'middle_back',
+      'neck',
+      'quadriceps',
+      'traps',
+      'triceps'
+    ];
   return (
     <div style={{ marginTop: "110px" }}>
       <h2 className="text-center">Exercise List</h2>
@@ -87,13 +114,19 @@ const ExerciseList = () => {
                     <label htmlFor="type" className="form-label">
                       Type:
                     </label>
-                    <input
-                      type="text"
-                      id="type"
-                      className="form-control"
+                    <select name="type" id="dropdown" className="form-control"
                       value={type}
-                      onChange={(e) => setType(e.target.value)}
-                    />
+                      onChange={(e) => setType(e.target.value)}>
+                    <option value="">Select</option>
+
+{typeOptions.map((typeOptions, index) => (
+
+         <option key={index} value={typeOptions}>{typeOptions}</option>
+       ))}
+                    </select>
+
+
+
                   </div>
                 </div>
               </div>
@@ -101,16 +134,18 @@ const ExerciseList = () => {
                 <div className="col-md-6">
                   <div className="form-group">
                   <label htmlFor="muscle" className="form-label">
-                      Equipment:
+                      Muscle:
                     </label>
                     <select name="muscle" id="dropdown"   className="form-control"
                       value={muscle}
                       onChange={(e) => setMuscle(e.target.value)}
                     >
- <option value="">Select</option>
- <option value="">Select</option>
- <option value="">Select</option>
- <option value="">Select</option>
+                        <option value="">Select</option>
+
+ {muscleOptions.map((muscleOptions, index) => (
+
+          <option key={index} value={muscleOptions}>{muscleOptions}</option>
+        ))}
                     </select>
                   </div>
                 </div>
