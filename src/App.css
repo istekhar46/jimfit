@@ -17,7 +17,7 @@ body {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
-  background-color: hsla(0, 0%, 95.3%, 0.75);
+  /* background-color: hsla(0, 0%, 95.3%, 0.75); */
 
 }
 
@@ -125,6 +125,11 @@ nav {
   margin-left: auto;
   color: blue;
 }
+
+a:link, a:visited, a:hover, a:active{
+  text-decoration: none;
+}
+
 @media screen and (max-width: 1200px) {
   .detail-image {
     width: 300px;
