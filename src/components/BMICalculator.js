@@ -1,8 +1,8 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 
 import '../index.css'
 
-function BMICalculator() {
+function BMICalculator(props) {
 
   // state
   const [weight, setWeight] = useState('')
@@ -53,7 +53,10 @@ function BMICalculator() {
   let reload = () => {
     window.location.reload()
   }
-
+ useEffect(() => {
+    props.setProgress(100)
+ }, [])
+ 
   return (
     <div className="app">
       <div className='container'>

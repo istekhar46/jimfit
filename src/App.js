@@ -34,7 +34,7 @@ const App = () => {
           <Route path="/exercise/:id" element={<ExerciseDetail />} />
           <Route path="/news/" element={<News setProgress={setProg} />} />
           <Route path="/bfc/" element={<BodyFatCalculator />} />
-          <Route path="/bmi" element={<BMICalculator />} />
+          <Route path="/bmi" element={<BMICalculator setProgress={setProg} />} />
           <Route path="/eg/" element={<ExerciseList />} />
           <Route path="/about" element={<About setProgress={setProg}/>} />
         </Routes>
