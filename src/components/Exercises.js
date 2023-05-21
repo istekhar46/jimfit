@@ -6,7 +6,7 @@ import { exerciseOptions, fetchData } from '../utils/fetchData';
 import ExerciseCard from './ExerciseCard';
 import Loader from './Loader';
 
-const Exercises = ({ exercises, setExercises, bodyPart, props }) => {
+const Exercises = ({ exercises, setExercises, bodyPart }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [exercisesPerPage] = useState(6);
 
@@ -15,24 +15,16 @@ const Exercises = ({ exercises, setExercises, bodyPart, props }) => {
       let exercisesData = [];
 
       if (bodyPart === 'all') {
-        props.setProgress(0)
-
         exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
       } else {
         exercisesData = await fetchData(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`, exerciseOptions);
       }
-      props.setProgress(100)
-
 
       setExercises(exercisesData);
     };
 
     fetchExercisesData();
   }, [bodyPart]);
-  useEffect(() => {
-    props.setProgress(100)
-  }, [])
-
 
   // Pagination
   const indexOfLastExercise = currentPage * exercisesPerPage;
