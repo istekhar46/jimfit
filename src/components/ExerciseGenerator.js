@@ -1,7 +1,7 @@
 // import { wrap } from 'module';
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 
-const ExerciseList = () => {
+const ExerciseList = (props) => {
   const [exercises, setExercises] = useState([]);
   const [error, setError] = useState(null);
   const [showForm, setShowForm] = useState(true);
@@ -85,6 +85,11 @@ const typeOptions = [
       'traps',
       'triceps'
     ];
+
+    useEffect(() => {
+      props.setProgress(100)
+    }, [])
+  
   return (
     <div style={{ marginTop: "110px" }}>
 

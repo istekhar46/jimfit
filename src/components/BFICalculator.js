@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import '../index.css'
 
-const BodyFatCalculator = () => {
+const BodyFatCalculator = (props) => {
   const [weight, setWeight] = useState('');
   const [waist, setWaist] = useState('');
   const [neck, setNeck] = useState('');
@@ -20,6 +21,9 @@ const BodyFatCalculator = () => {
     setBodyFat(bodyFatValue.toFixed(2));
   };
 
+  useEffect(() => {
+    props.setProgress(100)
+  }, [])
   return (
     <div className="container" style={{ marginTop: "88px"}}>
       <div >

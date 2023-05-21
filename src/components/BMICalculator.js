@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 
 import '../index.css'
 
@@ -40,7 +40,7 @@ function BMICalculator(props) {
   if (bmi < 1) {
     imgSrc = null
   } else {
-    if(bmi < 25) {
+    if (bmi < 25) {
       imgSrc = require('../assets/underweight.png')
     } else if (bmi >= 25 && bmi < 30) {
       imgSrc = require('../assets/healthy.png')
@@ -53,10 +53,10 @@ function BMICalculator(props) {
   let reload = () => {
     window.location.reload()
   }
- useEffect(() => {
+  useEffect(() => {
     props.setProgress(100)
- }, [])
- 
+  }, [])
+
   return (
     <div className="app">
       <div className='container'>
